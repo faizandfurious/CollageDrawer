@@ -195,6 +195,10 @@ public class ArtistBase implements Artist {
 
 	@Override
 	public void removeChildAt(int index) {
+		if(index < 0 || index > children.size()){
+			//Do nothing
+		}
+		
 		//Check if the given index exists and actually has data. If so, it will retrieve the child at the given
 		//position, remove it from the list of children, and replace that child's parent with a null value.
 		if(children.get(index) != null){

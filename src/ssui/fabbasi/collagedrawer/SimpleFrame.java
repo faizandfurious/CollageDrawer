@@ -29,12 +29,12 @@ public class SimpleFrame extends ArtistBase {
 		paint.setColor(Color.BLACK);
 		//Set the stroke width to zero to activate hairline mode (1px wide)
 		paint.setStrokeWidth(0);
-		//Have the canvas draw a rect object based on it's own coordinates. 
+		//Have the canvas draw a rect object based on it's own coordinates.
 		onCanvas.drawRect(location, paint);
 		
 		//Draw children
 		for(Artist child : children){
-			onCanvas.save();			
+			onCanvas.save();
 			onCanvas.translate(child.getX(), child.getY());			//	now	in	child’s	coords!	
 			onCanvas.clipRect(0,0, child.getW(), child.getH());	
 			child.draw(onCanvas);	
