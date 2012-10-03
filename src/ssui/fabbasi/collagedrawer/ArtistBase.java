@@ -186,10 +186,8 @@ public class ArtistBase implements Artist {
 				Artist parent = child.getParent();
 				parent.removeChild(child);
 			}
-			else{
-				child.setParent(this);
-				children.add(child);
-			}
+			child.setParent(this);
+			children.add(child);
 		}
 	}
 

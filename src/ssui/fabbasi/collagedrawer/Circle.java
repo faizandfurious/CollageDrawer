@@ -17,10 +17,12 @@ public class Circle extends ArtistBase {
 	
 	@Override
 	public void doLayout(){
-		offset = (float) (Math.toRadians(360/children.size()));
-		System.out.println("Size is: " + children.size() + " offset is: " + offset);
-		float curr_offset = 0;
 		if(children.size() > 0){
+			
+			offset = (float) (Math.toRadians(360/children.size()));
+			System.out.println("Size is: " + children.size() + " offset is: " + offset);
+			float curr_offset = 0;
+			
 			for(Artist child : children){
 				float x = (float) (center.x + radius*(Math.cos(curr_offset)));
 				float y = (float) (center.y + radius*(Math.sin(curr_offset)));
