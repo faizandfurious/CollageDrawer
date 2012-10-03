@@ -22,9 +22,17 @@ public class TestActivity extends Activity {
 	
 	protected Artist buildTest() {
 		// create and return a test Artist tree here...
-        Artist child = new ArtistBase();
-        child.addChild(new ArtistBase());
-        return /* replace this: */ new ArtistBase();
+//        TextArtist ta = new TextArtist(50, 50, "SSUI RoCkS!!!!", Typeface.DEFAULT_BOLD, 50f, Color.BLACK);
+		SimpleFrame rootArtist = new SimpleFrame(0, 0, 400, 800);
+        Icon icon = new Icon(0, 0, BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.bluebutton);
+		NinePatch patches = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
+		NinePartImage npi = new NinePartImage(0, 5, 200, 20, patches);
+		Pile p = new Pile(5, 200, 100, 100);
+		rootArtist.addChild(npi);
+		rootArtist.addChild(icon);
+		System.out.println(rootArtist.children.size());
+        return rootArtist;
 	}
 	
     /** Called when the activity is first created. */
@@ -48,7 +56,7 @@ public class TestActivity extends Activity {
     
 
 	protected Artist buildTest1(){
-		SolidBackDrop rootArtist = new SolidBackDrop(0, 0, 400, 800, Color.WHITE);
+		SimpleFrame rootArtist = new SimpleFrame(0, 0, 400, 800);
 		putAll(rootArtist);
 		Pile p = new Pile(5, 200, 100, 100);
 		p.addChild(new SolidBackDrop(0, 0, 900, 900, Color.GRAY));
@@ -62,7 +70,7 @@ public class TestActivity extends Activity {
 		Column col = new Column(5, 370, 50, 200);
 		rootArtist.addChild(col);
 		putAll(col);
-		
+		System.out.println(rootArtist.children.size());
 		return rootArtist;
 	}
     
@@ -151,19 +159,19 @@ public class TestActivity extends Activity {
 			rootArtist.addChild(new SimpleFrame(0, 0, 20, 20));
 			rootArtist.addChild(new SolidBackDrop(0, 0, 20, 20, Color.BLUE));
 			rootArtist.addChild(new Icon(0, 0, BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher)));
-			Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_launcher);
+			Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.bluebutton);
 			NinePatch patches = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
 			rootArtist.addChild(new NinePartImage(0, 0, 200, 20, patches));
-			rootArtist.addChild(new TextArtist(0, 0, "SSUI RoCkS!!!!", Typeface.DEFAULT_BOLD, 50f));
+			rootArtist.addChild(new TextArtist(0, 0, "SSUI RoCkS!!!!", Typeface.DEFAULT_BOLD, 50f, Color.BLACK));
 		}
 		else{
 			rootArtist.addChild(new SimpleFrame(5, 5, 20, 20));
 			rootArtist.addChild(new SolidBackDrop(5, 30, 20, 20, Color.BLUE));
 			rootArtist.addChild(new Icon(5, 55, BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher)));
-			Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_launcher);
+			Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.bluebutton);
 			NinePatch patches = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
 			rootArtist.addChild(new NinePartImage(30, 5, 200, 20, patches));
-			rootArtist.addChild(new TextArtist(30, 30, "SSUI RoCkS!!!!", Typeface.DEFAULT_BOLD, 50f));
+			rootArtist.addChild(new TextArtist(30, 30, "SSUI RoCkS!!!!", Typeface.DEFAULT_BOLD, 50f, Color.BLACK));
 		}
 	}
 }

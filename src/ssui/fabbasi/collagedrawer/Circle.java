@@ -2,7 +2,7 @@ package ssui.fabbasi.collagedrawer;
 
 public class Circle extends ArtistBase {
 
-	public Circle(int i, int j, int k, int l, int m, int n, int o) {
+	public Circle(float x, float y, float w, float h, float layoutCenterX, float layoutCenterY, float layoutRadius) {
 		// TODO Auto-generated constructor stub
 	}
 
