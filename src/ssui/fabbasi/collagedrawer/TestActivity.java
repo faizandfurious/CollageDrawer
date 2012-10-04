@@ -31,7 +31,6 @@ public class TestActivity extends Activity {
 		Pile p = new Pile(5, 200, 100, 100);
 		rootArtist.addChild(npi);
 		rootArtist.addChild(icon);
-		System.out.println(rootArtist.children.size());
         return rootArtist;
 	}
 	
