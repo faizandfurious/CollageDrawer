@@ -24,7 +24,7 @@ import android.graphics.PointF;
  */
 public class ArtistBase implements Artist {
 
-	//Variables
+	//Variables (Default-valued)
 	//The top-left x-position of the Artist object. Initialize to zero.
 	private float xpos = 0;
 	//The top-left y-position of the Artist object. Initialize to zero.
