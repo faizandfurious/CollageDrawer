@@ -26,11 +26,9 @@ public class TestActivity extends Activity {
 		SimpleFrame rootArtist = new SimpleFrame(0, 0, 400, 800);
         Icon icon = new Icon(0, 0, BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 		Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.bluebutton);
-		NinePatch patches = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
-		NinePartImage npi = new NinePartImage(0, 5, 200, 20, patches);
-		Pile p = new Pile(5, 200, 100, 100);
-		rootArtist.addChild(npi);
-		rootArtist.addChild(icon);
+		Rotate rotate = new Rotate(0, 0, 400, 400, Color.GREEN, 49);
+		putAll(rotate);
+		rootArtist.addChild(rotate);
         return rootArtist;
 	}
 	
@@ -69,7 +67,6 @@ public class TestActivity extends Activity {
 		Column col = new Column(5, 370, 50, 200);
 		rootArtist.addChild(col);
 		putAll(col);
-		System.out.println(rootArtist.children.size());
 		return rootArtist;
 	}
     
